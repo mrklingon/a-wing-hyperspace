@@ -1,11 +1,11 @@
 function MoveTie (Tf: game.LedSprite) {
     Tf.turn(Direction.Right, randint(-45, 45))
     Tf.move(0.5)
+    Tf.ifOnEdgeBounce()
     if (AWing.isTouching(Tf)) {
         game.addScore(Tscore)
         game.removeLife(1)
         Tscore = 0
-        Tf.ifOnEdgeBounce()
         Tf.set(LedSpriteProperty.X, randint(0, 4))
         Tf.set(LedSpriteProperty.Y, randint(0, 4))
     }
